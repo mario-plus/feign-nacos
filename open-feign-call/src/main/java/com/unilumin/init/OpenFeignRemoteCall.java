@@ -21,9 +21,15 @@ public class OpenFeignRemoteCall {
 
     @PostConstruct
     void call() {
-
+        //WORK
         System.out.println(nacosServiceClient.workAtHome());
 
         System.out.println(openFeignCall.workAtCompany());
+
+        //meeting
+        System.out.println(nacosServiceClient.meeting());
+
+        System.out.println(openFeignCall.meeting());
+
     }
 }

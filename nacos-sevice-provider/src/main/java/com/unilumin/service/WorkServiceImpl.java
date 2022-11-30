@@ -12,4 +12,9 @@ public class WorkServiceImpl implements WorkService {
     public String work() {
         return "touch fish";
     }
+
+
+    public String meeting() {
+        return "sleep";
+    }
 }

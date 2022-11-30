@@ -3,6 +3,7 @@ package com.unilumin.controller;
 import com.unilumin.service.WorkServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -18,5 +19,9 @@ public class WorkController {
     @GetMapping("/doWork")
     public String doWork() {
         return workService.work();
+    }
+    @PostMapping("/meeting")
+    public String meeting(){
+        return workService.meeting();
     }
 }
