@@ -1,0 +1,10 @@
+server:
+  port: 8811
+spring:
+  application:
+    name: open-feign-call
+  cloud:
+    nacos:
+      discovery:
+        # nacos 服务注册中心
+        server-addr: 127.0.0.1:8848
