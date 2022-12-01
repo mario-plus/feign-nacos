@@ -2,6 +2,7 @@ package com.unilumin.init;
 
 import com.unilumin.clients.NacosServiceClient;
 import com.unilumin.clients.OpenFeignCall;
+import com.unilumin.mock.api.DynamicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,10 +15,13 @@ import javax.annotation.PostConstruct;
 @Component
 public class OpenFeignRemoteCall {
     @Autowired
-    NacosServiceClient nacosServiceClient;
+    NacosServiceClient nacosServiceClient;//代理对象
 
     @Autowired
-    OpenFeignCall openFeignCall;
+    OpenFeignCall openFeignCall;//代理对象
+
+    @Autowired
+    DynamicService dynamicService;
 
     @PostConstruct
     void call() {
@@ -31,5 +35,7 @@ public class OpenFeignRemoteCall {
 
         System.out.println(openFeignCall.meeting());
 
+        //模拟openFeign原理，生成的动态代理类，通过httpClient远程调用
+        System.out.println(dynamicService.remoteCall("Dynamic"));
     }
 }

@@ -1,5 +1,6 @@
 package com.unilumin;
 
+import com.unilumin.mock.annocations.EnableDynamicProxy;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
@@ -10,6 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @EnableFeignClients
 @SpringBootApplication
+@EnableDynamicProxy
 public class OpenFeignApplication {
     public static void main(String[] args) {
         SpringApplication.run(OpenFeignApplication.class);
